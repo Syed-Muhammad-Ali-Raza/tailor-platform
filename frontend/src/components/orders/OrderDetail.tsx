@@ -7,6 +7,8 @@ import { Badge, type BadgeTone } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
 import { WhatsAppButton } from '@/components/whatsapp/WhatsAppButton';
 import { RatingStars, ReviewForm } from '@/components/reviews/ReviewForm';
+import { OrderStatusTimeline } from './OrderStatusTimeline';
+import { ReferencePhoto } from './ReferencePhoto';
 import type { OrderDetail, OrderStatus } from '@/types';
 
 const statusTone: Record<OrderStatus, BadgeTone> = {
@@ -147,22 +149,27 @@ export function OrderDetail({
 
         <Card className="p-5">
           <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-700">
-            {t('order_status_events')}
+            {t('order_history')}
           </h2>
-          <ol className="mt-3 space-y-2">
-            {[...order.statusEvents].reverse().map((event) => (
-              <li key={event.id} className="flex items-center justify-between gap-2 text-sm">
-                <span className="font-medium text-ink-soft">
-                  {formatStatus(event.to, t)}
-                </span>
-                <span className="text-xs text-ink-soft/70">
-                  {formatDate(event.createdAt)}
-                </span>
-              </li>
-            ))}
-          </ol>
+          <div className="mt-4">
+            <OrderStatusTimeline events={order.statusEvents} />
+          </div>
         </Card>
       </div>
+
+      {order.referencePhotoUrl ? (
+        <Card className="p-5">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-700">
+            {t('order_reference_photo')}
+          </h2>
+          <div className="mt-3">
+            <ReferencePhoto
+              url={order.referencePhotoUrl}
+              alt={t('order_reference_photo')}
+            />
+          </div>
+        </Card>
+      ) : null}
 
       <Card className="p-5">
         <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-700">

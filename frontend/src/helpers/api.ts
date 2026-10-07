@@ -113,3 +113,56 @@ export function apiDelete<T = void>(
 ): Promise<T | null> {
   return request<T>(path, 'DELETE', undefined, signal);
 }
+
+export async function apiUploadImage(file: File): Promise<{ url: string } | null> {
+  const form = new FormData();
+  form.append('file', file);
+  const headers: Record<string, string> = { Accept: 'application/json' };
+  const token = readToken();
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+
+  let response: Response;
+  try {
+    response = await fetch(`${BASE}/uploads`, {
+      method: 'POST',
+      headers,
+      body: form,
+      signal: buildSignal(),
+    });
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') {
+      throw new ApiError('Upload timed out', 'TIMEOUT', 0);
+    }
+    throw new ApiError('Upload failed', 'NETWORK_ERROR', 0);
+  }
+
+  let payload: unknown = null;
+  try {
+    payload = await response.json();
+  } catch {
+    payload = null;
+  }
+  const envelope = payload as {
+    success?: boolean;
+    data?: { url: string } | null;
+    error?: { code?: string; message?: string; details?: unknown };
+  } | null;
+
+  if (!response.ok || !envelope || envelope.success !== true) {
+    const code = envelope?.error?.code ?? `HTTP_${response.status}`;
+    const message = envelope?.error?.message ?? `Upload failed (${response.status})`;
+    throw new ApiError(message, code, response.status, envelope?.error?.details);
+  }
+  return envelope.data ?? null;
+}
+
+export async function apiFetchBlob(path: string): Promise<Blob | null> {
+  const url = `${BASE}${path.startsWith('/') ? path : `/${path}`}`;
+  const headers: Record<string, string> = { Accept: 'image/*' };
+  const token = readToken();
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+
+  const response = await fetch(url, { headers, signal: buildSignal() });
+  if (!response.ok) return null;
+  return response.blob();
+}

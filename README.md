@@ -29,9 +29,11 @@ business (no AI); Phase 2 stubs out AI Style Preview with a graceful 501.
 1. **Browse the catalog** — men's and women's designs (Shalwar Kameez, Kurta,
    Waistcoat, Suits) with base prices and fabric options.
 2. **Customize & order** — pick a fabric and stitching options, add your saved
-   measurements, and optionally **propose your own price** as a non-binding
+   measurements, attach a **reference photo** (kept private — only you and the
+   shop can see it), and optionally **propose your own price** as a non-binding
    offer. The shop confirms the final price before stitching starts.
-3. **Track status** — orders move through a locked flow:
+3. **Track status** — orders move through a locked flow, and every step is
+   recorded on an **order history timeline**:
    `PLACED → ACCEPTED → MEASUREMENTS_CONFIRMED → STITCHING → QUALITY_CHECK → READY → DELIVERED`
    (plus `CANCELLED` before delivery).
 4. **Tailor dashboard** — accept orders, counter price offers, update

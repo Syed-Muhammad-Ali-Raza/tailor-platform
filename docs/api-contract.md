@@ -181,8 +181,14 @@ Review = { id, orderId, rating, comment?, createdAt, customerName?, designName? 
 
 ### Uploads (auth)
 - `POST /uploads` multipart field `file` (jpg/png/webp ≤ 5 MB) → 201
-  `data: { url: "/uploads/<uuid>.<ext>" }` (served by backend static route;
-  production swaps to R2 signed URLs — never public buckets).
+  `data: { url: "/uploads/<uuid>.<ext>" }`. Files are stored in a **private**
+  dir, never on the public static route.
+- `GET /uploads/:name` (bearer) → 200 image or `404 NOT_FOUND`. Only the
+  order's customer, its tailor, or an ADMIN may fetch a photo, and only if it
+  is referenced by an order's `referencePhotoUrl`. `Cache-Control: private`.
+- `referencePhotoUrl` values are API-relative paths (`/uploads/<name>`) that
+  resolve against `/api/v1`; render them only through authenticated fetches
+  (blob fetch + object URL), never a bare `<img src>`.
 
 ## Env
 

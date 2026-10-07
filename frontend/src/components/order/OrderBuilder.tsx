@@ -104,9 +104,13 @@ export function OrderBuilder({ design }: { design: DesignDetail }) {
           deliveryType={draft.deliveryType}
           paymentMethod={draft.paymentMethod}
           offeredPrice={draft.offeredPrice}
+          referencePhotoUrl={draft.referencePhotoUrl}
           onDeliveryTypeChange={(value) => draft.setField('deliveryType', value)}
           onPaymentMethodChange={(value) => draft.setField('paymentMethod', value)}
           onOfferedPriceChange={(value) => draft.setField('offeredPrice', value)}
+          onReferencePhotoChange={(value) =>
+            draft.setField('referencePhotoUrl', value)
+          }
         />
       ) : null}
 
