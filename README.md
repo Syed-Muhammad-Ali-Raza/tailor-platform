@@ -68,5 +68,3 @@ Demo logins: tailor `03001234567` / `password123`, customer `03007654321` / `pas
 - UI is bilingual (English + Urdu, RTL-aware).
 - API contract: [`docs/api-contract.md`](docs/api-contract.md).
 - Product plan: [`PRODUCT-PLAN.md`](PRODUCT-PLAN.md).
-
-sma`, `postgresql`, `typescript`, `tailwindcss`, `zustand`, `ecommerce`, `custom-tailoring`
