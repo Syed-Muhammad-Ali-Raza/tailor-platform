@@ -1,0 +1,25 @@
+---
+description: Stack and repository structure for the Tailor Platform
+globs: "**/*.{ts,tsx}"
+alwaysApply: true
+---
+
+# Architecture
+
+Monorepo (npm workspaces): `backend` (Express 5 + TS + Prisma 6 + PostgreSQL 16)
+and `frontend` (Next.js 15 App Router + TS + Tailwind CSS 4 + Zustand 5).
+
+- Backend layering (strict order, never skip layers):
+  `routers/ (route + zod validation middleware) → controllers/ (HTTP only) →
+  services/ (business logic) → models/ (Prisma data access)`.
+  `proxy/` holds outbound integrations (AI try-on, WhatsApp). `middleware/`
+  holds auth, roles, rate limits, error handling. `utils/` is pure functions only.
+- Frontend layering: `app/` pages stay thin; rendering lives in
+  `components/`; data fetching in `hooks/`; pure logic in `helpers/`;
+  client state in `store/` (Zustand); strings in `i18n/en.ts` + `i18n/ur.ts`.
+- The API contract is `docs/api-contract.md` — backend and frontend must match
+  it exactly (envelope `{ success, data }` / `{ success:false, error }`).
+- Order status flow is locked: PLACED → ACCEPTED → MEASUREMENTS_CONFIRMED →
+  STITCHING → QUALITY_CHECK → READY → DELIVERED, plus CANCELLED. Never skip
+  states. Rules live in `backend/src/utils/status.ts`.
+- Server recalculates all money; the frontend only mirrors prices for display.

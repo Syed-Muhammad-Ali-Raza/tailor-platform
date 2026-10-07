@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" role="img" aria-label="Tailored waistcoat">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#faf7f1"/>
+      <stop offset="100%" stop-color="#efe7d6"/>
+    </radialGradient>
+    <linearGradient id="vest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#225641"/>
+      <stop offset="100%" stop-color="#183a2d"/>
+    </linearGradient>
+    <linearGradient id="vestShade" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d4736"/>
+      <stop offset="100%" stop-color="#143026"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7f1e3"/>
+      <stop offset="100%" stop-color="#efe6d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <ellipse cx="300" cy="742" rx="140" ry="18" fill="#d9c9a9" opacity="0.55"/>
+  <g>
+    <g fill="url(#shirt)">
+      <path d="M300 200 L252 214 L240 176 L300 146 L360 176 L348 214 Z"/>
+      <path d="M252 214 L240 176 L172 210 L214 470 L252 560 L300 590 L348 560 L386 470 L428 210 L360 176 L348 214 Z"/>
+    </g>
+    <path d="M300 200 L252 214 L240 176 L300 146 L360 176 L348 214 Z" fill="#c8902b"/>
+    <path d="M252 214 L240 176 L168 208 L212 404 L256 470 L300 356 Z" fill="url(#vest)"/>
+    <path d="M348 214 L360 176 L432 208 L388 404 L344 470 L300 356 Z" fill="url(#vestShade)"/>
+    <path d="M212 404 L300 356 L222 492 Z" fill="#143026" opacity="0.55"/>
+    <path d="M388 404 L300 356 L378 492 Z" fill="#143026" opacity="0.4"/>
+    <path d="M300 196 V356" stroke="#d9a83a" stroke-width="4" stroke-linecap="round"/>
+    <g fill="#e4c05f">
+      <circle cx="300" cy="284" r="7"/>
+      <circle cx="300" cy="330" r="7"/>
+    </g>
+    <path d="M330 356 C348 420 360 436 348 470" fill="none" stroke="#c8902b" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+    <path d="M348 470 L342 466 M348 470 L352 466" stroke="#c8902b" stroke-width="4" stroke-linecap="round"/>
+    <rect x="170" y="240" width="30" height="22" rx="2" fill="#f1e8d2" stroke="#dccba4" stroke-width="2"/>
+    <rect x="400" y="240" width="30" height="22" rx="2" fill="#f1e8d2" stroke="#dccba4" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+---
+description: Coding conventions and hard limits
+globs: "**/*.{ts,tsx,js,json}"
+alwaysApply: true
+---
+
+# Conventions
+
+- **MAX 500 LINES PER FILE** (ESLint `max-lines`). Split a file before it
+  reaches ~400 lines. Components are split into subcomponents first.
+- No code comments unless explicitly asked.
+- Named exports everywhere. Default exports only in `frontend/src/app/**/page.tsx`
+  and Next.js special files (`layout.tsx`, `middleware.ts`).
+- Every user-facing string goes through `t('key')`; the key must exist in BOTH
+  `frontend/src/i18n/en.ts` and `frontend/src/i18n/ur.ts`.
+- Urdu is RTL: use logical Tailwind properties (`ms-`, `me-`, `ps-`, `pe-`,
+  `text-start`, `text-end`), never `ml-`/`mr-`/`left-`/`right-`.
+- No secrets in code — env only (`.env.example` documents every variable).
+- Customer photos and measurements are private: never return them from public
+  endpoints, never log them.
+- Validation with Zod lives in the router as middleware; controllers never
+  re-parse input.
+- Errors: throw `AppError` from `backend/src/utils/errors.ts`; never leak stack
+  traces or raw DB errors to clients.

@@ -1,0 +1,20 @@
+---
+description: Testing requirements and commands
+globs: "**/*.{ts,tsx}"
+alwaysApply: true
+---
+
+# Testing
+
+- Backend: Jest 30 + Supertest. Tests in `backend/tests/{unit,api}`.
+  - Every endpoint needs an API test (happy path + auth/authorization failure).
+  - Pure helpers (`utils/`, price math, status transitions, validators) need unit tests.
+  - API tests build the app via `createApp({ prisma: mockPrisma })` — never hit a real DB.
+- Frontend: Vitest 5 + React Testing Library 16 (jsdom).
+  - Test files live next to the source: `src/**/__tests__/*.test.ts(x)`.
+  - Test pure helpers, Zustand stores, and components with meaningful logic
+    (forms, validation, status trackers).
+  - Mock `helpers/api.ts` with `vi.mock` — tests never hit the network.
+- Commands (run from repo root before finishing):
+  `npm test`, `npm run lint`, `npm run typecheck`.
+- New feature = tests first or at least alongside. Coverage must not drop.

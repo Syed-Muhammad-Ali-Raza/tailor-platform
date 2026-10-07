@@ -1,0 +1,33 @@
+{
+  "name": "tailor-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local tailor platform: catalog, custom stitching orders, measurements, tailor dashboard. Phase 1 MVP (Lahore).",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "start": "npm run start -w backend",
+    "test": "npm run test -w backend && npm run test -w frontend",
+    "test:backend": "npm run test -w backend",
+    "test:frontend": "npm run test -w frontend",
+    "lint": "npm run lint -w backend && npm run lint -w frontend",
+    "typecheck": "npm run typecheck -w backend && npm run typecheck -w frontend",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,md,yml}\"",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:migrate": "npm run db:migrate -w backend",
+    "db:seed": "npm run db:seed -w backend",
+    "db:studio": "npm run db:studio -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "10.0.5",
+    "prettier": "3.9.9"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}

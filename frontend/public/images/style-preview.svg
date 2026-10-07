@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" role="img" aria-label="Style Preview">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#faf7f1"/>
+      <stop offset="100%" stop-color="#e9dfc9"/>
+    </radialGradient>
+    <linearGradient id="kurta" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22493a"/>
+      <stop offset="100%" stop-color="#163528"/>
+    </linearGradient>
+    <linearGradient id="kurtaSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b4032"/>
+      <stop offset="100%" stop-color="#12291f"/>
+    </linearGradient>
+    <linearGradient id="shalwar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e7d9b8"/>
+      <stop offset="100%" stop-color="#d8c69e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect x="36" y="36" width="528" height="728" rx="40" fill="#ffffff" stroke="#c8902b" stroke-width="4" stroke-dasharray="2 10"/>
+  <ellipse cx="300" cy="724" rx="150" ry="16" fill="#d9c9a9" opacity="0.55"/>
+  <g>
+    <ellipse cx="300" cy="186" rx="46" ry="56" fill="#e0cfa7"/>
+    <path d="M254 226 C266 234 334 234 346 226 L356 270 L299 284 L244 270 Z" fill="#e7d9b8"/>
+    <path d="M299 284 L358 284 L366 480 L314 496 L286 496 L234 480 Z" fill="#e0cfa7"/>
+    <path d="M315 432 C300 424 300 424 285 432 L266 664 L300 680 L334 664 Z" fill="url(#kurtaSide)"/>
+    <path d="M300 232 L252 245 L238 204 L300 174 L362 204 L348 245 Z" fill="#b9832c"/>
+    <path d="M252 245 L238 204 L172 232 L204 452 L248 646 L228 682 L300 738 L372 682 L352 646 L396 452 L428 232 L362 204 L348 245 Z" fill="url(#kurta)">
+      <animate attributeName="opacity" values="0;0" dur="1s"/>
+    </path>
+    <g fill="none" stroke="#0d1f17">
+      <path d="M172 232 L204 304 L252 262 Z" fill="url(#kurtaSide)"/>
+      <path d="M428 232 L396 304 L348 262 Z" fill="url(#kurtaSide)"/>
+    </g>
+    <path d="M204 452 L258 414 L300 436 L258 466 Z" fill="#b9832c"/>
+    <path d="M396 452 L342 414 L300 436 L342 466 Z" fill="#b9832c"/>
+    <path d="M300 252 V688" stroke="#c8902b" stroke-width="6" stroke-linecap="round"/>
+    <g fill="#e9dfc9">
+      <circle cx="300" cy="300" r="5"/>
+      <circle cx="300" cy="352" r="5"/>
+      <circle cx="300" cy="404" r="5"/>
+      <circle cx="300" cy="456" r="5"/>
+      <circle cx="300" cy="508" r="5"/>
+    </g>
+    <path d="M248 640 L352 640" stroke="#b9832c" stroke-width="4" stroke-linecap="round"/>
+    <g fill="url(#shalwar)">
+      <path d="M236 702 Q246 668 252 636 L300 676 L348 636 Q354 668 364 702 Z"/>
+    </g>
+  </g>
+  <g>
+    <rect x="168" y="48" width="264" height="60" rx="30" fill="#0d1f17"/>
+    <rect x="224" y="48" width="88" height="60" rx="30" fill="#2b231c"/>
+    <text x="300" y="86" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="bold" fill="#e5b84e" letter-spacing="2">STYLE PREVIEW</text>
+  </g>
+</svg>

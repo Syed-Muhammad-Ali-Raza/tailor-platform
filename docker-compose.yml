@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tailor-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: tailor
+      POSTGRES_PASSWORD: tailor_dev_password
+      POSTGRES_DB: tailor
+    ports:
+      - "15433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tailor -d tailor"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:

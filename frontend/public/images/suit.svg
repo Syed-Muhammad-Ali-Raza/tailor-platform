@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" role="img" aria-label="Three piece suit">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#faf7f1"/>
+      <stop offset="100%" stop-color="#efe7d6"/>
+    </radialGradient>
+    <linearGradient id="jacket" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a453e"/>
+      <stop offset="100%" stop-color="#3c3730"/>
+    </linearGradient>
+    <linearGradient id="lapelL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#332e28"/>
+      <stop offset="100%" stop-color="#2c2823"/>
+    </linearGradient>
+    <linearGradient id="lapelR" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#33332f"/>
+      <stop offset="100%" stop-color="#2c2823"/>
+    </linearGradient>
+    <linearGradient id="trouser" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3c3730"/>
+      <stop offset="100%" stop-color="#332e28"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <ellipse cx="300" cy="742" rx="150" ry="18" fill="#d9c9a9" opacity="0.55"/>
+  <g>
+    <path d="M244 520 L244 700 L300 736 L356 700 L356 520 Z" fill="#332e28"/>
+    <path d="M244 520 L196 700 L244 700 Z" fill="#2c2823"/>
+    <path d="M356 520 L404 700 L356 700 Z" fill="#2c2823"/>
+    <path d="M300 200 L240 214 L232 178 L300 146 L368 178 L360 214 Z" fill="#332e28"/>
+    <path d="M240 214 L232 178 L140 208 L184 400 L236 520 L224 540 L300 576 L376 540 L364 520 L416 400 L460 208 L368 178 L360 214 Z" fill="url(#jacket)"/>
+    <path d="M240 214 L160 232 L228 300 L240 258 Z" fill="url(#lapelL)"/>
+    <path d="M360 214 L440 232 L372 300 L360 258 Z" fill="url(#lapelR)"/>
+    <path d="M224 322 L376 322 L300 470 Z" fill="#f1e8d2"/>
+    <path d="M224 322 L300 352 L224 358 Z" fill="#dccba4" opacity="0.6"/>
+    <g fill="#c8902b">
+      <circle cx="300" cy="342" r="7"/>
+      <circle cx="300" cy="382" r="7"/>
+      <circle cx="300" cy="422" r="7"/>
+    </g>
+    <rect x="356" y="264" width="34" height="38" rx="3" fill="#c8902b" transform="skewX(-12)"/>
+    <path d="M356 260 L390 256 L384 300 L350 304 Z" fill="#d9a83a" opacity="0.9"/>
+    <path d="M276 470 L300 540 L324 470 Z" fill="#d9a83a" opacity="0.85"/>
+  </g>
+</svg>
