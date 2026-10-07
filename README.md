@@ -40,12 +40,12 @@ business (no AI); Phase 2 stubs out AI Style Preview with a graceful 501.
 
 ## Tech stack
 
-| Layer    | Tech                                                          |
-| -------- | ------------------------------------------------------------- |
-| Frontend | Next.js 15 (App Router, TS) + Tailwind CSS 4 + Zustand 5      |
-| Backend  | Express 5 (TS) + Prisma 6 + PostgreSQL 16                     |
-| Tests    | Backend: Jest 30 + Supertest · Frontend: Vitest 5 + RTL 16    |
-| Tooling  | npm workspaces, Prettier, ESLint 9 (flat config), Docker      |
+| Layer    | Tech                                                       |
+| -------- | ---------------------------------------------------------- |
+| Frontend | Next.js 15 (App Router, TS) + Tailwind CSS 4 + Zustand 5   |
+| Backend  | Express 5 (TS) + Prisma 6 + PostgreSQL 16                  |
+| Tests    | Backend: Jest 30 + Supertest · Frontend: Vitest 5 + RTL 16 |
+| Tooling  | npm workspaces, Prettier, ESLint 9 (flat config), Docker   |
 
 ## Getting started
 
@@ -69,8 +69,4 @@ Demo logins: tailor `03001234567` / `password123`, customer `03007654321` / `pas
 - API contract: [`docs/api-contract.md`](docs/api-contract.md).
 - Product plan: [`PRODUCT-PLAN.md`](PRODUCT-PLAN.md).
 
-## Suggested repo meta
-
-- **Name:** `tailor-platform`
-- **Description:** Custom stitching & tailoring platform for Lahore shops — design catalog, customer price offers, saved measurements, and a tailor dashboard (Next.js + Express + Prisma/PostgreSQL).
-- **Tags:** `nextjs`, `express`, `prisma`, `postgresql`, `typescript`, `tailwindcss`, `zustand`, `ecommerce`, `custom-tailoring`
+sma`, `postgresql`, `typescript`, `tailwindcss`, `zustand`, `ecommerce`, `custom-tailoring`
